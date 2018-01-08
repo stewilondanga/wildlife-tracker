@@ -76,5 +76,13 @@ public class RegularAnimalTest {
     RegularAnimal savedRegularAnimal = RegularAnimal.find(testAnimal.getId());
     assertEquals("Goat", savedRegularAnimal.getName());
   }
+
+  // Database methods
+  @Testpublic void save_setsTheId_int() {
+    RegularAnimal testAnimal = new RegularAnimal("Rabbit");
+    testAnimal.save();
+    assertTrue(testAnimal.getId() > 0);
+  }
+
   
 }
