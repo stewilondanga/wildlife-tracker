@@ -33,5 +33,12 @@ publc class SightingTest {
     assertEquals(0, testSighting.getId());
   }
 
+  //animalId
+  @Test
+  public void sighting_instantiatesWithAnimalId_AnimalId(){
+    Sighting testSighting = new Sighting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+    assertEquals(testAnimal.getId(), testSighting.getAnimalId());
+  }
+
   
 }
