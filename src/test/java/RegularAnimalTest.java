@@ -58,5 +58,14 @@ public class RegularAnimalTest {
     assertEquals("Rabbit", savedRegularAnimal.getName());
   }
 
+  @Test
+  public void update_preservesOriginalName_Rabbit() {
+    RegularAnimal testAnimal = new RegularAnimal("Rabbit");
+    testAnimal.save();
+    testAnimal.update();
+    RegularAnimal savedRegularAnimal = RegularAnimal.find(testAnimal.getId());
+    assertEquals("Rabbit", savedRegularAnimal.getName());
+  }
+
   
 }
