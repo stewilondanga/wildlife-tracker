@@ -84,5 +84,13 @@ public class RegularAnimalTest {
     assertTrue(testAnimal.getId() > 0);
   }
 
+  @Test
+  public void save_insertsObjectIntoDB_true() {
+    RegularAnimal testAnimal = new RegularAnimal("Rabbit");
+    testAnimal.save();
+    RegularAnimal savedRegularAnimal = RegularAnimal.find(testAnimal.getId());
+    assertTrue(testAnimal.equals(savedRegularAnimal));
+  }
+
   
 }
