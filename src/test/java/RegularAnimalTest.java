@@ -67,5 +67,14 @@ public class RegularAnimalTest {
     assertEquals("Rabbit", savedRegularAnimal.getName());
   }
 
+  @Test
+  public void update_savesNewNameTODB_Goat() {
+    RegularAnimal testAnimal = new RegularAnimal("Rabbit");
+    testAnimal.save();
+    testAnimal.setName("Goat");
+    testAnimal.update();
+    RegularAnimal savedRegularAnimal = RegularAnimal.find(testAnimal.getId());
+    assertEquals("Goat", savedRegularAnimal.getName());
+  }
   
 }
