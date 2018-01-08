@@ -137,5 +137,15 @@ public class RegularAnimalTest {
     assertTrue(RegularAnimal.all().containsAll(Arrays.asList(expected)));
   }
 
+  @Test
+  public void search_returnsNothingForUnknownValue_emptyList() {
+    RegularAnimal firstRegularAnimal = new RegularAnimal("Rabbit");
+    firstRegularAnimal.save();
+    RegularAnimal secondRegularAnimal = new RegularAnimal("Goat");
+    secondRegularAnimal.save();
+    List<RegularAnimal> foundRegularAnimals = RegularAnimal.search("fox");
+    assertEquals(Collections.<RegularAnimal>emptyList(), foundRegularAnimals);
+  }
+
   
 }
