@@ -37,5 +37,12 @@ public class RegularAnimalTest {
     assertEquals("Rabbit", testAnimal.getName());
   }
 
+  @Test
+  public void setName_setsANewName_Goat() {
+    RegularAnimal testAnimal = new RegularAnimal("Rabbit");
+    testAnimal.setName("Goat");
+    assertEquals("Goat", testAnimal.getName());
+  }
+
   
 }
