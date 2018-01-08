@@ -50,5 +50,13 @@ public class RegularAnimalTest {
     testAnimal.setName("");
   }
 
+  @Test
+  public void save_savesNameToDB_Rabbit() {
+    RegularAnimal testAnimal = new RegularAnimal("Rabbit");
+    testAnimal.save();
+    RegularAnimal savedRegularAnimal = RegularAnimal.find(testAnimal.getId());
+    assertEquals("Rabbit", savedRegularAnimal.getName());
+  }
+
   
 }
