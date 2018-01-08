@@ -130,5 +130,11 @@ publc class SightingTest {
     testSighting.setRangerId(-1);
   }
 
-  
+  //Database methods
+  @Test
+  public void save_setsTheId_int() {
+    Sighting testSighting = new Sighting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+    testSighting.save();
+    assertTrue(testSighting.getId() > 0);
+  }
 }
