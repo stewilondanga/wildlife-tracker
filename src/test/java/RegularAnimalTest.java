@@ -159,5 +159,14 @@ public class RegularAnimalTest {
     RegularAnimal[] expected = { firstRegularAnimal, secondRegularAnimal };
     assertEquals(Arrays.asList(expected), foundRegularAnimals);
   }
+
+  //Other methods
+  @Test
+  public void equals_objectIsEqualIfAllPropertiesAreEqual_true() {
+    RegularAnimal firstRegularAnimal = new RegularAnimal("Rabbit");
+    RegularAnimal secondRegularAnimal = new RegularAnimal("Rabbit");
+    assertTrue(firstRegularAnimal.equals(secondRegularAnimal));
+  }
+
   
 }
