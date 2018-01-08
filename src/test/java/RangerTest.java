@@ -340,5 +340,14 @@ public class RangerTest {
     assertEquals(Arrays.asList(expected), foundRangers);
     assertFalse(foundRangers.contains(fifthRanger));
   }
+
+  //Other methods
+  @Test
+  public void equals_objectIsEqualIfAllPropertiesAreEqual_true() {
+    Ranger firstRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    Ranger secondRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    assertTrue(firstRanger.equals(secondRanger));
+  }
+
   
 }
