@@ -18,5 +18,12 @@ public class RegularAnimalTest {
     RegularAnimal testAnimal = new RegularAnimal("Rabbit");
     assertTrue(testAnimal instanceof RegularAnimal);
   }
+
+  @Test
+  public void animal_instantiatesWithoutId_0() {
+    RegularAnimal testAnimal = new RegularAnimal("Rabbit");
+    assertEquals( 0, testAnimal.getId());
+  }
+
   
 }
