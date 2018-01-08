@@ -155,5 +155,14 @@ publc class SightingTest {
     assertEquals(testSighting.getId(), savedSighting.getId());
   }
 
+  @Testpublic void all_getsAllObjectsFromDatabase_true() {
+    Sighting firstSighting = new Sighting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+    firstSighting.save();
+    Sighting secondSighting = new Sighting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+    secondSighting.save();
+    Sighting[] expected = { firstSighting, secondSighting };
+    assertTrue(Sighting.all().containsAll(Arrays.asList(expected)));
+  }
+
   
 }
