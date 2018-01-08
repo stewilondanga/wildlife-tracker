@@ -313,5 +313,15 @@ public class RangerTest {
     assertTrue(Ranger.all().containsAll(Arrays.asList(expected)));
   }
 
+  @Test
+  public void search_returnsNothingForUnknownValue_emptyList() {
+    Ranger firstRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    firstRanger.save();
+    Ranger secondRanger = new Ranger("NewUser", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    secondRanger.save();
+    List<Ranger> foundRangers = Ranger.search("tom");
+    assertEquals(Collections.<Ranger>emptyList(), foundRangers);
+  }
+
   
 }
