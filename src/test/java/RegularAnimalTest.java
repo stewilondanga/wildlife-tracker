@@ -9,5 +9,9 @@ import java.sql.Timestamp;
 
 public class RegularAnimalTest {
 
+  @Rule
+  public DatabaseRule database = new DatabaseRule();
+
+  //Instantiation
   
 }
