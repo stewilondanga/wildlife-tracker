@@ -100,5 +100,13 @@ public class RangerTest {
     testRanger.setFirstName("");
   }
 
+  @Test
+  public void save_savesFirstNameToDB_Mjanja() {
+    Ranger testRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    testRanger.save();
+    Ranger savedRanger = Ranger.find(testRanger.getId());
+    assertEquals("Mjanja", savedRanger.getFIrstName());
+  }
+
   
 }
