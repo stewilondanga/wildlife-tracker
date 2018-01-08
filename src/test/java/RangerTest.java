@@ -268,5 +268,13 @@ public class RangerTest {
     assertTrue(testRanger.getId()) > 0);
   }
 
+  @Test
+  public void save_insertsObjectItoDB_true() {
+    Ranger testRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    testRanger.save();
+    Ranger savedRanger = Ranger.find(testRanger.getId());
+    assertTrue(testRanger.equals(savedRanger));
+  }
+
   
 }
