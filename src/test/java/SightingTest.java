@@ -164,5 +164,12 @@ publc class SightingTest {
     assertTrue(Sighting.all().containsAll(Arrays.asList(expected)));
   }
 
-  
+  @Test
+  public void delete_removesObjectFromDB_null() {
+    Sighting testSighting = new Sighting(testAnimal.getId(),testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+    testSighting.save();
+    testSighting.delete();
+    Sighting savedSighting = Sighting.find(testSighting.getId());
+    assertEquals(null, savedSighting);
+  }
 }
