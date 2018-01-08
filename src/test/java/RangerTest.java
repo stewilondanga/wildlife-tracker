@@ -303,5 +303,15 @@ public class RangerTest {
     secondRanger.update();
   }
 
+  @Test
+  public void all_getsAllObjectsFromDatabase_true() {
+    Ranger firstRanger = new Ranger("User", "Tom", "Smith", 1, 5035550000L);
+    firstRanger.save();
+    Ranger secondRanger = new Ranger("NewUser", "Tommy", "Smith", 1, 5035550000L);
+    secondRanger.save();
+    Ranger[] expected = { firstRanger, secondRanger };
+    assertTrue(Ranger.all().containsAll(Arrays.asList(expected)));
+  }
+
   
 }
