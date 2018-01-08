@@ -127,5 +127,15 @@ public class RegularAnimalTest {
     secondRegularAnimal.update();
   }
 
+  @Test
+  public void all_getsAllObjectsFromDatabase_true() {
+    RegularAnimal firstRegularAnimal = new RegularAnimal("Rabbit");
+    firstRegularAnimal.save();
+    RegularAnimal secondRegularAnimal = new RegularAnimal("Goat");
+    secondRegularAnimal.save();
+    RegularAnimal[] expected = { firstRegularAnimal, secondRegularAnimal };
+    assertTrue(RegularAnimal.all().containsAll(Arrays.asList(expected)));
+  }
+
   
 }
