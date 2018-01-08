@@ -44,5 +44,14 @@ publc class SightingTest {
   public void sighting_cannotInstantiateInvalidAnimalId_IllegalArgumentException(){
     Sighting testSighting = new Sighting(-1, testLocation.getId(), testRanger.getId(), new Timestamp(1L));
   }
+
+  @Test
+  public void setAnimalId_setsANewAnimalId_NewAnimalId() {
+    Sighting testSighting = new Sighting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+    RegularAnimal newAnimal = new RegularAnimal("Cat");
+    newAnimal.save();
+    testSighting.setAnimalId(newAnimal.getId());
+    assertEquals(newAnimal.getId(), testSighting.getAnimalId());
+  }
   
 }
