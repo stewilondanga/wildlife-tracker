@@ -89,7 +89,7 @@ public class RegularAnimalTest {
     RegularAnimal testAnimal = new RegularAnimal("Rabbit");
     testAnimal.save();
     RegularAnimal savedRegularAnimal = RegularAnimal.find(testAnimal.getId());
-    assertTrue(testAnimal.equals(savedRegularAnimal));
+    assertTrue(testAnimal.equals(savedRegularAnimal);
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -100,5 +100,12 @@ public class RegularAnimalTest {
     secondRegularAnimal.save();
   }
 
-  
+  @Test
+  public void delete_removesObjectFromDB_null() {
+    RegularAnimal testAnimal = new RegularAnimal("Rabbit");
+    testAnimal.save();
+    testAnimal.delete();
+    RegularAnimal savedRegularAnimal = RegularAnimal.find(testAnimal.getId());
+    assertEquals(null, savedRegularAnimal);
+  }
 }
