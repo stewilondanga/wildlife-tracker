@@ -147,5 +147,17 @@ public class RegularAnimalTest {
     assertEquals(Collections.<RegularAnimal>emptyList(), foundRegularAnimals);
   }
 
+  @Test
+  public void searcg_returnsAllMatchingObjects_true() {
+    RegularAnimal firstRegularAnimal = new RegularAnimal("Bobcat");
+    firstRegularAnimal.save();
+    RegularAnimal secondRegularAnimal = new RegularAnimal("House Cat");
+    secondRegularAnimal.save();
+    RegularAnimal thirdRegularAnimal = new RegularAnimal("Rabbit");
+    thirdRegularAnimal.save();
+    List<RegularAnimal> foundRegularAnimals = RegularAnimal.search("cat");
+    RegularAnimal[] expected = { firstRegularAnimal, secondRegularAnimal };
+    assertEquals(Arrays.asList(expected), foundRegularAnimals);
+  }
   
 }
