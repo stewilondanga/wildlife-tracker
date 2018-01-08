@@ -241,5 +241,14 @@ public class RangerTest {
     assertEquals(5035550000L, savedRanger.getPhone());
   }
 
+  @Test
+  public void update_preservesOriginalPhone_5035550000() {
+    Ranger testRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    testRanger.save();
+    test.Ranger.update();
+    Ranger savedRanger = Ranger.find(testRanger.getId());
+    assertEquals(5035550000L, savedRanger.getPhone());
+  }
+
   
 }
