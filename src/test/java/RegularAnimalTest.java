@@ -168,5 +168,18 @@ public class RegularAnimalTest {
     assertTrue(firstRegularAnimal.equals(secondRegularAnimal));
   }
 
-  
+  @Test
+  public void getSightings_getsSightingAssociatedWithId_Sighting() {
+    RegularAnimal testAnimal = new RegularAnimal("Rabbit");
+    testAnimal.save();
+    Location testLocation = new Location("Near bridge", 1.525, -2.311);
+    testLocation.save();
+    Ranger testRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    testRanger.save();
+    Sighting testSighting =new Sighting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+    testSighting.save();
+    List<Sighting> foundSighting = testAnimal.getSightings();
+    Sighting[] expected = { testSighting };
+    assertTrue(foundSighting.containsAll(Arrays.asList(expected)));
+  }
 }
