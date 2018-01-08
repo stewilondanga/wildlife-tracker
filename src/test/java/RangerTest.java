@@ -13,5 +13,9 @@ public class RangerTest {
 
   // Instantiation
   @Test
+  public void ranger_instantiatesCorrectly_true() {
+    Ranger testRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    assertTrue(testRanger instanceof Rnager);
+  }
   
 }
