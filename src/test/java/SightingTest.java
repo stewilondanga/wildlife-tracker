@@ -146,5 +146,14 @@ publc class SightingTest {
     assertTrue(testSighting.equals(savedSighting));
   }
 
+  @Test
+  public void update_preservesOriginalId_true() {
+    Sighting testSighting = new Sighting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+    testSighting.save();
+    testSighting.update();
+    Sighting savedSighting = Sighting.find(testSighting.getId());
+    assertEquals(testSighting.getId(), savedSighting.getId());
+  }
+
   
 }
