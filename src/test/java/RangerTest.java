@@ -65,5 +65,15 @@ public class RangerTest {
     assertEquals("User", savedRanger.getUserName());
   }
 
+  @Test
+  public void update_savesNewUserNameToDB_NewUser() {
+    Ranger testRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    testRanger.save();
+    testRanger.setUserName("NewUser");
+    testRanger.update();
+    Ranger savedRanger = Ranger.find(testRanger.getId());
+    assertEquals("NewUser", savedRanger.getUserName());
+  }
+
   
 }
