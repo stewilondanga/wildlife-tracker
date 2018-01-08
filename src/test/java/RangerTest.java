@@ -24,5 +24,16 @@ public class RangerTest {
     assertEquals(0, testRanger.getId());
   }
 
+  // User Name
+  @Testpublic void ranger_instantiatesWithName_User() {
+    Ranger testRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    assertEquals("User", testRanger.getUserName());
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void ranger_cannotInstantiateEmptyUserName_IllegalArgumentException() {
+    Ranger testRanger = new Ranger("", "Mjanja", "Mwenyewe", 1, 5035550000L);
+  }
+
   
 }
