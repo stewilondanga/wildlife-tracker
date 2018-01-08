@@ -59,5 +59,14 @@ publc class SightingTest {
     Sighting testSighting = new Sighting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
     testSighting.setAnimalId(-1);
   }
+
+  // timeOfSighting
+  @Test
+  public void sighting_instantiatesWithTimeOfSighting_Timestamp() {
+    Sighting testSighting = new Sighting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+    Timestamp expected = new Timestamp(1L);
+    assertEquals(expected, testSighting.getTimeOfSighting());
+  }
+
   
 }
