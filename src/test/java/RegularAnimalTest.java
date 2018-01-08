@@ -117,5 +117,15 @@ public class RegularAnimalTest {
     assertEquals(testAnimal.getId(), savedRegularAnimal.getId());
   }
 
+  @Test(expected = IllegalArgumetException.class)
+  public void update_cannotSaveIfNameAlreadyExists_IllegalArgumentException() {
+    RegularAnimal firstRegularAnimal = new RegularAnimal("Rabbit");
+    firstRegularAnimal.save();
+    RegularAnimal secondRegularAnimal = new RegularAnimal("Goat");
+    secondRegularAnimal.save();
+    secondRegularAnimal.setName("Rabbit");
+    secondRegularAnimal.update();
+  }
+
   
 }
