@@ -68,5 +68,12 @@ publc class SightingTest {
     assertEquals(expected, testSighting.getTimeOfSighting());
   }
 
+  @Test
+  public void setTimeOfSighting_setsAnewTime_NewTime() {
+    Sighting testSighting = new Sighting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+    testSighting.setTimeOfSighting(new Timestamp(2L));
+    Timestamp expected = new Timestamp(2L);
+    assertEquals(expected, testSighting.getTimeOfSighting());
+  }
   
 }
