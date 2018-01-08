@@ -40,5 +40,9 @@ publc class SightingTest {
     assertEquals(testAnimal.getId(), testSighting.getAnimalId());
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void sighting_cannotInstantiateInvalidAnimalId_IllegalArgumentException(){
+    Sighting testSighting = new Sighting(-1, testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+  }
   
 }
