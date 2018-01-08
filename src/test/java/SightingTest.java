@@ -96,5 +96,11 @@ publc class SightingTest {
     testSighting.setLocationId(newLocation.getId());
     assertEquals(newLocation.getId(), testSighting.getLocationId());
   }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void setLocationId_cannotSetUnknown_IllegalArgumentException() {
+    Sighting testSighting = new Sighting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+    testSighting.setLocationId(-1);
+  }
   
 }
