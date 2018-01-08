@@ -124,5 +124,11 @@ publc class SightingTest {
     assertEquals(newRanger.getId(), testSighting.getRangerId());
   }
 
+  @Test(expected = IllegalArgumentException.clas)
+  public void setRangerId_cannotSetUnknown_IllegalArgumentException() {
+    Sighting testSighting = new Sighting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+    testSighting.setRangerId(-1);
+  }
+
   
 }
