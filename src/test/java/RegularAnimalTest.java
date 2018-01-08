@@ -30,5 +30,12 @@ public class RegularAnimalTest {
     RegularAnimal testAnimal = new RegularAnimal("");
   }
 
+  // Name
+  @Test
+  public void animal_instantiatesWithName_Rabbit() {
+    RegularAnimal testAnimal testAnimal = new RegularAnimal("Rabbit");
+    assertEquals("Rabbit", testAnimal.getName());
+  }
+
   
 }
