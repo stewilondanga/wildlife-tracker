@@ -108,5 +108,14 @@ public class RangerTest {
     assertEquals("Mjanja", savedRanger.getFIrstName());
   }
 
+  @Test
+  public void update_preservesOriginalFirstName_Mjanja() {
+    Ranger testRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    testRanger.save();
+    testRanger.update();
+    Ranger savedRanger = Ranger.find(testRanger.getId());
+    assertEquals("Mjanja", savedRanger.getFirstName());
+  }
+
   
 }
