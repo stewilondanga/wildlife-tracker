@@ -94,5 +94,11 @@ public class RangerTest {
     assertEquals("Tom", testRanger.getFirstName());
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void setName_cannotSetEmptyName_IllegalArgumentException() {
+    Ranger testRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    testRanger.setFirstName("");
+  }
+
   
 }
