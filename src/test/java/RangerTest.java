@@ -185,5 +185,12 @@ public class RangerTest {
     assertEquals(1, testRanger.getBadge());
   }
 
+  @Test
+  public void setBadge_setsANewBadge_2() {
+    Ranger testRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    testRanger.setBadge(2);
+    assertEquals(2, testRanger.getBadge());
+  }
+
   
 }
