@@ -260,5 +260,13 @@ public class RangerTest {
     assertEquals(3601234567L, savedRanger.getPhone());
   }
 
+  // Database methods
+  @Test
+  public void save_setsTheId_int() {
+    Ranger testRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    testRanger.save();
+    assertTrue(testRanger.getId()) > 0);
+  }
+
   
 }
