@@ -276,5 +276,13 @@ public class RangerTest {
     assertTrue(testRanger.equals(savedRanger));
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void save_cannotSaveIfNameAlreadyExists_IllegalArgumentException() {
+    Ranger firstRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    firstRanger.save();
+    Ranger secondRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    secondRanger.save();
+  }
+
   
 }
