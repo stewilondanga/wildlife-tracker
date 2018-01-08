@@ -75,5 +75,12 @@ public class RangerTest {
     assertEquals("NewUser", savedRanger.getUserName());
   }
 
+  // First Name
+  @Test
+  public void ranger_instantiatesWithName_Bob() {
+    Ranger testRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    assertEquals("Bob", testRanger.getFirstName());
+  }
+
   
 }
