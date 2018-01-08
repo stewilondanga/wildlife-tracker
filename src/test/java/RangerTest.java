@@ -35,5 +35,12 @@ public class RangerTest {
     Ranger testRanger = new Ranger("", "Mjanja", "Mwenyewe", 1, 5035550000L);
   }
 
+  @Test
+  public void setUserName_setsANewName_NewUser() {
+    Ranger testRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    testRanger.setUserName("NewUser");
+    assertEquals("NewUser", testRanger.getUserName());
+  }
+
   
 }
