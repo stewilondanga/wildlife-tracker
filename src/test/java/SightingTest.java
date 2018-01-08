@@ -172,4 +172,12 @@ publc class SightingTest {
     Sighting savedSighting = Sighting.find(testSighting.getId());
     assertEquals(null, savedSighting);
   }
+
+  //other methods
+  @Test
+  public void equals_objectIsEqualIfAllPropertiesAreEqual_true() {
+    Sighting firstSighting = new Sighting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+    Sighting secondSighting = new Sighting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+    assertTrue(firstSighting.equals(secondSighting));
+  }
 }
