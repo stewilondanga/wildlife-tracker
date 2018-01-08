@@ -44,5 +44,11 @@ public class RegularAnimalTest {
     assertEquals("Goat", testAnimal.getName());
   }
 
+  @Test(expected = IllegalArgumentEception.class)
+  public void setName_cannotSetEmptyName_IllegalArgumentException() {
+    RegularAnimal testAnimal = new RegularAnimal("Rabbit");
+    testAnimal.setName("");
+  }
+
   
 }
