@@ -108,4 +108,14 @@ public class RegularAnimalTest {
     RegularAnimal savedRegularAnimal = RegularAnimal.find(testAnimal.getId());
     assertEquals(null, savedRegularAnimal);
   }
+
+  @Test public void update_preservesOriginalId_true() {
+    RegularAnimal testAnimal = new RegularAnimal("Rabbit");
+    testAnimal.save();
+    testAnimal.update();
+    RegularAnimal savedRegularAnimal = RegularAnimal.find(testAnimal.getId());
+    assertEquals(testAnimal.getId(), savedRegularAnimal.getId());
+  }
+
+  
 }
