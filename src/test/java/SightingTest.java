@@ -20,5 +20,11 @@ publc class SightingTest {
     testRanger.save();
   }
 
+  //Instantiation
+  @Test
+  public void sighting_insatntiatesCorrectly_true() {
+    Sighting testSighting = new Sighting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+    assertTrue(testSighting instanceof Sighting);
+  }
   
 }
