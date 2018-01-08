@@ -284,5 +284,12 @@ public class RangerTest {
     secondRanger.save();
   }
 
-  
+  @Test
+  public void update_preservesOriginalId_true() {
+    Ranger testRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    testRanger.save();
+    testRanger.update();
+    Ranger savedRanger = Ranger.find(testRanger.getId());
+    assertEquals(testRanger.getId(), savedRanger.getId());
+  }
 }
