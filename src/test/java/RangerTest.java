@@ -127,5 +127,12 @@ public class RangerTest {
     assertEquals("Mjanja", savedRanger.getFirstName());
   }
 
+  // Last Name
+  @Test
+  public void ranger_intantiatesWithName_Smith() {
+    Ranger testRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
+    assertEquals("Mwenyewe", testRanger.getLastName());
+  }
+
   
 }
