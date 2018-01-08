@@ -77,9 +77,14 @@ public class RangerTest {
 
   // First Name
   @Test
-  public void ranger_instantiatesWithName_Bob() {
+  public void ranger_instantiatesWithName_Mjanja() {
     Ranger testRanger = new Ranger("User", "Mjanja", "Mwenyewe", 1, 5035550000L);
-    assertEquals("Bob", testRanger.getFirstName());
+    assertEquals("Mjanja", testRanger.getFirstName());
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void ranger_cannotInstantiateEmptyFirstName_IllegalArgumentException() {
+    Ranger testRanger = new Ranger("User", "", "Mwenyewe", 1, 5035550000L);
   }
 
   
