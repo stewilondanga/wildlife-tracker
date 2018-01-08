@@ -137,4 +137,14 @@ publc class SightingTest {
     testSighting.save();
     assertTrue(testSighting.getId() > 0);
   }
+
+  @Test
+  public void save_insertsObjectIntoDB_true() {
+    Sighting testSighting = new Sighting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+    testSighting.save();
+    Sighting savedSighting = Sighting.find(testSighting.getId());
+    assertTrue(testSighting.equals(savedSighting));
+  }
+
+  
 }
