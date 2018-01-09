@@ -157,5 +157,15 @@ public class EndangeredAnimalTest {
     assertEquals("Good", savedAnimal.getHealth());
   }
 
+  @Test
+  public void update_savesNewHealthToDB_Poor() {
+    EndangeredAnimal testAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
+    testAnimal.save();
+    testAnimal.setHealth("Poor");
+    testAnimal.update();
+    EndangeredAnimal savedAnimal = EndangeredAnimal.find(testAnimal.getId());
+    assertEquals("Poor", savedAnimal.getHealth());
+  }
+
   
 }
