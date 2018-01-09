@@ -211,5 +211,13 @@ public class LocationTest {
     assertTrue(Location.all().containsAll(Arrays.asList(expected)));
   }
 
+  @Testpublic void delete_removesObjectFromDB_null() {
+    Location testLocation = new Location("Near bridge", 1.525, -2.311);
+    testLocation.save();
+    testLocation.delete();
+    LOcation savedLocation = Location.find(testLocation.getId());
+    assertEquals(null, savedLocation);
+  }
+
   
 }
