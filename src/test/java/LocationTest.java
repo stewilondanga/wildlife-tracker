@@ -31,5 +31,10 @@ public class LocationTest {
     assertEquals("Near bridge", testLocation.getName());
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void ranger_cannotInstantiateEmptyUserName_IllegalArgumentException() {
+    Location testLocation = new Location("", 1.525, -2.311);
+  }
+
   
 }
