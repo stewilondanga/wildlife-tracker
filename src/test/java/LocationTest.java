@@ -7,5 +7,9 @@ import static org.junit.Asert.*;
 import org.sql2o.*;
 
 public class LocationTest {
+
+  @Rule
+  public DatabaseRule database = new DatabaseRule();
+
   
 }
