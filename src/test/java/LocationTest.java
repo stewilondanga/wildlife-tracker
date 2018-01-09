@@ -139,5 +139,24 @@ public class LocationTest {
     assertEquals(-2.311, savedLocation.getYCoord(), 0);
   }
 
+  @Test
+  public void update_preservesOriginalYCoord_2_311() {
+    Location testLocation = new Location("Near bridge", 1.525, -2.311);
+    testLocation.save();
+    testLocation.update();
+    Location savedLocation = Location.find(testLocation.getId());
+    assertEquals(-2.311, savedLocation.getYCoord(), 0);
+  }
+
+  @Test
+  public void update_savesNewXCoordToDB_4_243() {
+    Location testLocation = new Location("Near bridge", 1.525, -2.311);
+    testLocation.save();
+    testLocation.setYCoord(4.243);
+    testLocation.update();
+    Location savedLocation = Location.find(testLocation.getId());
+    assertEquals(4.243, savedLocation.getYCoord(), 0);
+  }
+
   
 }
