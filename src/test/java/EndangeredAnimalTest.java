@@ -167,5 +167,13 @@ public class EndangeredAnimalTest {
     assertEquals("Poor", savedAnimal.getHealth());
   }
 
+  //Database methods
+  @Test
+  public void save_setsTheId_int() {
+    EndangeredAnimal testAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
+    testAnimal.save();
+    assertTrue(testAnimal.getId() > 0);
+  }
+
   
 }
