@@ -65,5 +65,15 @@ public class EndangeredAnimalTest {
     assertEquals("Rhino", savedAnimal.getName());
   }
 
+  @Test
+  public void update_savesNewNameToDB_Panda() {
+    EndangeredAnimal testAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
+    testAnimal.save();
+    testAnimal.setName("Panda");
+    testAnimal.update();
+    EndangeredAnimal savedAnimal = EndangeredAnimal.find(testAnimal.getId());
+    assertEquals("Panda", savedAnimal.getName());
+  }
+
   
 }
