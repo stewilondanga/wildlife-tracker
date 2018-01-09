@@ -24,5 +24,12 @@ public class LocationTest {
     assertEquals(0, testLocation.getId());
   }
 
+  //Name
+  @Test
+  public void ranger_instantiatesWithName_User() {
+    Location testLocation = new Location("Near bridge", 1.525, -2.311);
+    assertEquals("Near bridge", testLocation.getName());
+  }
+
   
 }
