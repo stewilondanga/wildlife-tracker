@@ -158,5 +158,13 @@ public class LocationTest {
     assertEquals(4.243, savedLocation.getYCoord(), 0);
   }
 
+  // Database methods
+  @Test
+  public void save_setsTheId_int() {
+    Location testLocation = new Location("Near bridge", 1.525, -2.311);
+    testLocation.save();
+    assertTrue(testLocation.getId() > 0);
+  }
+
   
 }
