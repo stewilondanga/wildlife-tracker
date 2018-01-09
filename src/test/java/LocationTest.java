@@ -83,5 +83,12 @@ public class LocationTest {
     assertEquals(1.525, testLocation.getXCoord(), 0);
   }
 
+  @Test
+  public void setXCoord_setsANewXCoord_3_885() {
+    Location testLocation = new Location("Near bridge", 1.525, -2.311);
+    testLocation.setXCoord(3.885);
+    assertEquals(3.885, testLocation.getXCoord(), 0);
+  }
+
   
 }
