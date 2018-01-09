@@ -108,5 +108,14 @@ public class EndangeredAnimalTest {
     assertEquals(1.5, savedAnimal.getAge(), 0);
   }
 
+  @Test
+  public void update_preservesOriginalAge_1_5() {
+    EndangeredAnimal testAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
+    testAnimal.save();
+    testAnimal.update();
+    EndangeredAnimal savedAnimal = EndangeredAnimal.find(testAnimal,getId());
+    assertEquals(1.5, savedAnimal.getAge(), 0);
+  }
+
   
 }
