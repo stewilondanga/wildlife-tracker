@@ -219,5 +219,15 @@ public class LocationTest {
     assertEquals(null, savedLocation);
   }
 
+  @Test
+  public void search_returnsNothingForUnknownValue_emptyList() {
+    Location firstLocation = new Location("Near bridge", 1.525, -2.311);
+    firstLocation.save();
+    Location secondLocation = new Location("New Location", 1.525, -2.311);
+    secondLocation.save();
+    List<Location> foundLocations = Location.search("blank");
+    assertEquals(collection.<Location>emptyList(), foundLocations);
+  }
+
   
 }
