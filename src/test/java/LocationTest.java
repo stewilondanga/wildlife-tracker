@@ -166,5 +166,13 @@ public class LocationTest {
     assertTrue(testLocation.getId() > 0);
   }
 
+  @Test
+  public void save_insertsObjectIntoDB_true() {
+    Location testLocation = new Location("Near bridge", 1.525, -2.311);
+    testLocation.save();
+    Location savedLocation = Location.find(testLocation.getId());
+    assertTrue(testLocation.getName().equals(savedLocation.getName()));
+  }
+
   
 }
