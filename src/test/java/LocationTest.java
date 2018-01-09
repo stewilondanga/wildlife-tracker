@@ -117,5 +117,12 @@ public class LocationTest {
     assertEquals(3.885, savedLocation.getXCoord(), 0);
   }
 
+  // yCoord
+  @Test
+  public void ranger_instantiatesWithYCoord_2_311() {
+    Location testLocation = new Location("Near bridge", 1.525, -2.311);
+    assertEquals(-2.311, testLocation.getYCoord(), 0);
+  }
+
   
 }
