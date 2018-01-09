@@ -36,5 +36,18 @@ public class LocationTest {
     Location testLocation = new Location("", 1.525, -2.311);
   }
 
+  @Test
+  public void setUserName_setsANewName_NewName() {
+    Location testLocation = new Location("Near bridge", 1.525, -2.311);
+    testLocation.setName("NewName");
+    assertEquals("NewName", testLocation.getName());
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void setUserName_cannotSetEmptyName_IllegalArgumentException() {
+    Location testLocation = new Location("Near bridge", 1.525, -2.311);
+    testLocation.setName("");
+  }
+
   
 }
