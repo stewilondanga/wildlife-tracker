@@ -57,5 +57,14 @@ public class LocationTest {
     assertEquals("Near bridge", savedLocation.getName());
   }
 
+  @Test
+  public void update_preservesOriginalName_Nearbridge() {
+    Location testLocation = new Location("Near bridge", 1.525, -2.311);
+    testLocation.save();
+    testLocation.update();
+    Location savedLocation = Location.find(testLocation.getId());
+    assertEquals("Near bridge", savedLocation.getName());
+  }
+
   
 }
