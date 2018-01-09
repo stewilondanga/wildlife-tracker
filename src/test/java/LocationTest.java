@@ -243,5 +243,13 @@ public class LocationTest {
     assertFalse(foundLocations.contains(thirdLocation));
   }
 
+  //Other methods
+  @Test
+  public void equals_objectIsEqualIfAllPropertiesAreEqual_true() {
+    Location firstLocation = new Location("Near bridge", 1.525, -2.311);
+    Location secondLocation = new Location("Near bridge", 1.525, -2.311);
+    assertTrue(firstLocation.equals(secondLocation));
+  }
+
   
 }
