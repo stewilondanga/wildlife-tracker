@@ -94,5 +94,11 @@ public class EndangeredAnimalTest {
     assertEquals(2.1, testAnimal.getAge(), 0);
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void setAge_cannotSetNegativeAge_IllegalArgumentException() {
+    EndangeredAnimal testAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
+    testAnimal.setAge(-1.5);
+  }
+
   
 }
