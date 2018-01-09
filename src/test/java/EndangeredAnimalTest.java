@@ -8,5 +8,8 @@ import java.sql.Timestamp;
 
 public class EndangeredAnimalTest {
 
+  @Rule
+  public DatabaseRule database = new DatabaseRule();
+
   
 }
