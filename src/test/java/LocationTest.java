@@ -49,5 +49,13 @@ public class LocationTest {
     testLocation.setName("");
   }
 
+  @Test
+  public void save_savesNameToDB_Nearbridge() {
+    Location testLocation = new Location("Near bridge", 1.525, -2.311);
+    testLocation.save();
+    Location savedLocation = Location.find(testLocation.getId());
+    assertEquals("Near bridge", savedLocation.getName());
+  }
+
   
 }
