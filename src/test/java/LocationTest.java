@@ -5,3 +5,7 @@ import java.sql.Timestamp;
 import org.junit.*;
 import static org.junit.Asert.*;
 import org.sql2o.*;
+
+public class LocationTest {
+  
+}
