@@ -11,5 +11,11 @@ public class EndangeredAnimalTest {
   @Rule
   public DatabaseRule database = new DatabaseRule();
 
+  //Instantiation
+  @Timestamppublic void endangeredAnimal_instantiatesCorrectly_true() {
+    EndangeredAnimal testAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
+    assertTrue(testAnimal instanceof EndangeredAnimal);
+  }
+
   
 }
