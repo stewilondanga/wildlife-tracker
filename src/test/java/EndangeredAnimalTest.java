@@ -127,5 +127,12 @@ public class EndangeredAnimalTest {
     assertEquals(2.1, savedAnimal.getAge(), 0);
   }
 
+  // Health
+  @Test
+  public void endangeredAnimal_instantiatesWithHealth_Good() {
+    EndangeredAnimal testAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
+    assertEquals("Good", testAnimal.getHealth());
+  }
+
   
 }
