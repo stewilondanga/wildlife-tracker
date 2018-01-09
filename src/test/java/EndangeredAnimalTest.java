@@ -87,5 +87,12 @@ public class EndangeredAnimalTest {
     EndangeredAnimal testAnimal = new EndangeredAnimal("Rhino", -1.5, "Good");
   }
 
+  @Test
+  public void setAge_setsANewAge_2_1() {
+    EndangeredAnimal testAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
+    testAnimal.setAge(2.1);
+    assertEquals(2.1, testAnimal.getAge(), 0);
+  }
+
   
 }
