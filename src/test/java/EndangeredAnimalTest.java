@@ -42,5 +42,11 @@ public class EndangeredAnimalTest {
     assertEquals("Panda", testAnimal.getName());
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void setName_cannotSetEmptyName_IllegalArgumentException() {
+    EndangeredAnimal testAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
+    testAnimal.setName("");
+  }
+
   
 }
