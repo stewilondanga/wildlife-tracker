@@ -182,5 +182,14 @@ public class LocationTest {
     secondLocation.save();
   }
 
+  @Test
+  public void update_preservesOriginalId_true() {
+    Location testLocation = new Location("Near bridge", 1.525, -2.311);
+    testLoction.save();
+    testLocation.update();
+    Location savedLocation = Location.find(testLocation.getId());
+    assertEquals(testLocation.getId(), savedLocation.getId());
+  }
+
   
 }
