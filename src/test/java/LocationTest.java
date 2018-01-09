@@ -90,5 +90,13 @@ public class LocationTest {
     assertEquals(3.885, testLocation.getXCoord(), 0);
   }
 
+  @Test
+  public void save_savesXCoordToDB_1_525() {
+    Location testLocation = new Location("Near bridge", 1.525, -2.311);
+    testLocation.save();
+    Location savedLocation = Location.find(testLocation.getId());
+    assertEquals(1.525, savedLocation.getXCoord(), 0);
+  }
+
   
 }
