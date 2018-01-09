@@ -107,5 +107,15 @@ public class LocationTest {
     assertEquals(1.525, savedLocation.getXCoord(), 0);
   }
 
+  @Test
+  public void update_savesNewXCoordToDB_3_885() {
+    Location testLocation = new Location("Near bridge", 1.525, -2.311);
+    testLocation.save();
+    testLocation.setXCoord(3.885);
+    testLocation.update();
+    Location savedLocation = Location.find(testLocation.getId());
+    assertEquals(3.885, savedLocation.getXCoord(), 0);
+  }
+
   
 }
