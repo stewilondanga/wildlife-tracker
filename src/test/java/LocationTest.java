@@ -193,6 +193,13 @@ public class LocationTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void update_cannotSaveIfNameALreadyExists_IllegalArgumentException() {
-    Location firstLocation = new Location("Near bridge", 1.525)
+    Location firstLocation = new Location("Near bridge", 1.525, -2.311);
+    firstLocation.save();
+    Location secondLocation = new Location("New location", 1.525, -2.311);
+    secondLOcation.save();
+    secondLocation.setName("Near bridge");
+    secondLocation.update();
   }
+
+  
 }
