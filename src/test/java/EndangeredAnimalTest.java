@@ -35,5 +35,12 @@ public class EndangeredAnimalTest {
     EndangeredAnimal testAnimal = new EndangeredAnimal("", 1.5, "Good");
   }
 
+  @Test
+  public void setName_setsANewName_Panda() {
+    EndangeredAnimal testAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
+    testAnimal.setName("Panda");
+    assertEquals("Panda", testAnimal.getName());
+  }
+
   
 }
