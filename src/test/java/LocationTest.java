@@ -174,5 +174,13 @@ public class LocationTest {
     assertTrue(testLocation.getName().equals(savedLocation.getName()));
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void save_cannotSaveIfNameAlreadyExists_IllegalArgumentException() {
+    Location firstLocation = new Location("Near bridge", 1.525, -2.311);
+    firstLocation.save();
+    Location secondLocation = new Location("Near bridge", 1.525, -2.311);
+    secondLocation.save();
+  }
+
   
 }
