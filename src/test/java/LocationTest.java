@@ -131,5 +131,13 @@ public class LocationTest {
     assertEquals(4.243, testLocation.getYCoord(), 0);
   }
 
+  @Test
+  public void save_savesYCoordToDB_2_311() {
+    Location testLocation = new Location("Near bridge", 1.525, -2.311);
+    testLocation.save();
+    Location savedLocation = Location.find(testLocation.getId());
+    assertEquals(-2.311, savedLocation.getYCoord(), 0);
+  }
+
   
 }
