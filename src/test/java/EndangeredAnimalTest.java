@@ -175,5 +175,13 @@ public class EndangeredAnimalTest {
     assertTrue(testAnimal.getId() > 0);
   }
 
+  @Test
+  public void save_insertsObjectIntoDB_true() {
+    EndangeredAnimal testAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
+    testAnimal.save();
+    EndangeredAnimal savedAnimal = EndangeredAnimal.find(testAnimal.getId());
+    assertTrue(testAnimal.equals(savedAnimal));
+  }
+
   
 }
