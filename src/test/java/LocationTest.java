@@ -201,5 +201,15 @@ public class LocationTest {
     secondLocation.update();
   }
 
+  @Test
+  public void all_getsAllObjectsFromDatabase_true() {
+    Location firstLocation - new Location("Near bridge", 1.525, -2.311);
+    firstLocation.save();
+    LOcation secondLocation = new Location("New Location", 1.525, -2.311);
+    secondLocation.save();
+    Location[] expected = { firstLocation, secondLocation };
+    assertTrue(Location.all().containsAll(Arrays.asList(expected)));
+  }
+
   
 }
