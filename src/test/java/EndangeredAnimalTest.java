@@ -219,5 +219,15 @@ public class EndangeredAnimalTest {
     assertEquals(null, savedAnimal);
   }
 
+  @Test
+  public void all_getsAllObjectsFromDatabase_true() {
+    EndangeredAnimal firstAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
+    firstAnimal.save();
+    EndangeredAnimal secondAnimal = new EndangeredAnimal("Panda", 1.5, "Good");
+    secondAnimal.save();
+    EndangeredAnimal[] expected = { firstAnimal, secondAnimal };
+    assertTrue(EndangeredAnimal.all().containsAll(Arrays.asList(expected)));
+  }
+
   
 }
