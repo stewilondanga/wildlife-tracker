@@ -229,5 +229,15 @@ public class EndangeredAnimalTest {
     assertTrue(EndangeredAnimal.all().containsAll(Arrays.asList(expected)));
   }
 
+  @Test
+  public void search_returnsNothingForUnknownValue_emptyList() {
+    EndangeredAnimal firstAnimal = newEndangeredAnimal("Panda", 1.5, "Good");
+    firstAnimal.save();
+    EndangeredAnimal secondAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
+    secondAnimal.save();
+    List<EndangeredAnimal> foundAnimals = EndangeredAnimal.search("fox");
+    assertEquals(Collections.<EndangeredAnimal>emptyList(), foundAnimals);
+  }
+
   
 }
