@@ -252,5 +252,13 @@ public class EndangeredAnimalTest {
     assertEquals(Arrays.asList(expected), foundAnimals);
   }
 
+  // Other methods
+  @Test
+  public void equals_objectIsEqualIfAllPropertiesAreEqual_true() {
+    EndangeredAnimal firstAnimal = new EndangeredAnimal("Rabbit", 1.5, "Good");
+    EndangeredAnimal secondAnimal = new EndangeredAnimal("Rbbit", 1.5, "Good");
+    assertTrue(firstAnimal.equals(secondAnimal));
+  }
+
   
 }
