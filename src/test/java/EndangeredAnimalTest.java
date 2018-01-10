@@ -239,5 +239,18 @@ public class EndangeredAnimalTest {
     assertEquals(Collections.<EndangeredAnimal>emptyList(), foundAnimals);
   }
 
+  @Test
+  public void search_returnsAllMatchingObjects_true() {
+    EndangeredAnimal firstAnimal = new EndangeredAnimal("AsianElephant", 1.5, "Good");
+    firstAnimal.save();
+    EndangeredAnimal secondAnimal = new EndangeredAnimal("Indian Elephant", 1.5, "Good");
+    secondAnimal.save();
+    EndangeredAnimal thirdEndangeredAnimal = new EndangeredAnimal("Panda", 1.5, "Good");
+    thirdEndangeredAnimal.save();
+    List<EndangeredAnimal> foundAnimal = EndangeredAnimal.search("elephant");
+    EndangeredAnimal[] expected = { firstAnimal, secondAnimal };
+    assertEquals(Arrays.asList(expected), foundAnimals);
+  }
+
   
 }
