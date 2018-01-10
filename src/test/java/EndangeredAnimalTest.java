@@ -210,5 +210,14 @@ public class EndangeredAnimalTest {
     secondAnimal.update();
   }
 
+  @Test
+  public void delete_removesObjectFromDB_null() {
+    EndangeredAnimal testAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
+    testAnimal.save();
+    testAnimal.delete();
+    EndangeredAnimal savedAnimal = EndangeredAnimal.find(testAnimal.getId());
+    assertEquals(null, savedAnimal);
+  }
+
   
 }
