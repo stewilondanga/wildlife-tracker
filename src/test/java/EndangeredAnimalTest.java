@@ -191,5 +191,14 @@ public class EndangeredAnimalTest {
     secondAnimal.save();
   }
 
+  @Test
+  public void update_preservesOriginalId_true() {
+    EndangeredAnimal testAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
+    testAnimal.save();
+    testAnimal.update();
+    EndangeredAnimal savedAnimal = EndangeredAnimal.find(testAnimal.getId());
+    assertEquals(testAnimal.getId(), savedAnimal.getId());
+  }
+
   
 }
