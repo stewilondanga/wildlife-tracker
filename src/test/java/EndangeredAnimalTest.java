@@ -260,5 +260,9 @@ public class EndangeredAnimalTest {
     assertTrue(firstAnimal.equals(secondAnimal));
   }
 
+  @Testpublic void idExists_isFalseWhenIdDoesNotExists_false() {
+    assertFalse(Animal.idExists(1));
+  }
+
   
 }
