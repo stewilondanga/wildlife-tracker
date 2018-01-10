@@ -200,5 +200,15 @@ public class EndangeredAnimalTest {
     assertEquals(testAnimal.getId(), savedAnimal.getId());
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void update_cannotSaveIfNameAlreadyExists_IllegalArgumentException() {
+    EndangeredAnimal firstAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
+    firstAnimal.save();
+    EndangeredAnimal secondAnimal = new EndangeredAnimal("Panda", 1.5, "Good");
+    secondAnimal.save();
+    secondAnimal.setName("Rhino");
+    secondAnimal.update();
+  }
+
   
 }
