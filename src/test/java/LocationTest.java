@@ -196,22 +196,23 @@ public class LocationTest {
     Location firstLocation = new Location("Near bridge", 1.525, -2.311);
     firstLocation.save();
     Location secondLocation = new Location("New location", 1.525, -2.311);
-    secondLOcation.save();
+    secondLocation.save();
     secondLocation.setName("Near bridge");
     secondLocation.update();
   }
 
   @Test
   public void all_getsAllObjectsFromDatabase_true() {
-    Location firstLocation - new Location("Near bridge", 1.525, -2.311);
+    Location firstLocation = new Location("Near bridge", 1.525, -2.311);
     firstLocation.save();
-    LOcation secondLocation = new Location("New Location", 1.525, -2.311);
+    Location secondLocation = new Location("New Location", 1.525, -2.311);
     secondLocation.save();
     Location[] expected = { firstLocation, secondLocation };
     assertTrue(Location.all().containsAll(Arrays.asList(expected)));
   }
 
-  @Testpublic void delete_removesObjectFromDB_null() {
+  @Test
+  public void delete_removesObjectFromDB_null() {
     Location testLocation = new Location("Near bridge", 1.525, -2.311);
     testLocation.save();
     testLocation.delete();
@@ -252,7 +253,7 @@ public class LocationTest {
   }
 
   @Test
-  public void getSightings_getsSightingAssociatedWIthId_SIghting() {
+  public void getSightings_getsSightingAssociatedWIthId_Sighting() {
     RegularAnimal testAnimal = new RegularAnimal("Rabbit");
     testAnimal.save();
     Location testLocation = new Location("Near bridge", 1.525, -2.311);
@@ -266,5 +267,4 @@ public class LocationTest {
     assertTrue(foundSighting.containsAll(Arrays.asList(expected)));
   }
 
-  
 }
