@@ -12,7 +12,8 @@ public class EndangeredAnimalTest {
   public DatabaseRule database = new DatabaseRule();
 
   //Instantiation
-  @Timestamppublic void endangeredAnimal_instantiatesCorrectly_true() {
+  @Test
+  public void endangeredAnimal_instantiatesCorrectly_true() {
     EndangeredAnimal testAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
     assertTrue(testAnimal instanceof EndangeredAnimal);
   }
@@ -31,7 +32,7 @@ public class EndangeredAnimalTest {
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void endangeredAnimal_cannotInstantiateEmptyName_IllegalArgumentException(){
+  public void endangeredAnimal_cannotInstantiateEmptyName_IllegalArgumentException() {
     EndangeredAnimal testAnimal = new EndangeredAnimal("", 1.5, "Good");
   }
 
@@ -77,7 +78,7 @@ public class EndangeredAnimalTest {
 
   // Age
   @Test
-  public void endangeredAnimal_instantiatesWIthAge_1_5() {
+  public void endangeredAnimal_instantiatesWithAge_1_5() {
     EndangeredAnimal testAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
     assertEquals(1.5, testAnimal.getAge(), 0);
   }
@@ -113,7 +114,7 @@ public class EndangeredAnimalTest {
     EndangeredAnimal testAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
     testAnimal.save();
     testAnimal.update();
-    EndangeredAnimal savedAnimal = EndangeredAnimal.find(testAnimal,getId());
+    EndangeredAnimal savedAnimal = EndangeredAnimal.find(testAnimal.getId());
     assertEquals(1.5, savedAnimal.getAge(), 0);
   }
 
@@ -185,7 +186,7 @@ public class EndangeredAnimalTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void save_cannotSaveIfNameAlreadyExists_IllegalArgumentException() {
-    EndangeredAnimal firstAnimal = new EndangeresAnimal("Rhino", 1.5, "Good");
+    EndangeredAnimal firstAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
     firstAnimal.save();
     EndangeredAnimal secondAnimal = new EndangeredAnimal("Rhino", 1.5, "Good");
     secondAnimal.save();
@@ -241,7 +242,7 @@ public class EndangeredAnimalTest {
 
   @Test
   public void search_returnsAllMatchingObjects_true() {
-    EndangeredAnimal firstAnimal = new EndangeredAnimal("AsianElephant", 1.5, "Good");
+    EndangeredAnimal firstAnimal = new EndangeredAnimal("Asian Elephant", 1.5, "Good");
     firstAnimal.save();
     EndangeredAnimal secondAnimal = new EndangeredAnimal("Indian Elephant", 1.5, "Good");
     secondAnimal.save();
@@ -256,7 +257,7 @@ public class EndangeredAnimalTest {
   @Test
   public void equals_objectIsEqualIfAllPropertiesAreEqual_true() {
     EndangeredAnimal firstAnimal = new EndangeredAnimal("Rabbit", 1.5, "Good");
-    EndangeredAnimal secondAnimal = new EndangeredAnimal("Rbbit", 1.5, "Good");
+    EndangeredAnimal secondAnimal = new EndangeredAnimal("Rabbit", 1.5, "Good");
     assertTrue(firstAnimal.equals(secondAnimal));
   }
 
@@ -279,7 +280,7 @@ public class EndangeredAnimalTest {
     testLocation.save();
     Ranger testRanger = new Ranger("User", "Bob", "Smith", 1, 5035550000L);
     testRanger.save();
-    Sighting testSighting = new SIghting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
+    Sighting testSighting = new Sighting(testAnimal.getId(), testLocation.getId(), testRanger.getId(), new Timestamp(1L));
     testSighting.save();
     List<Sighting> foundSighting = testAnimal.getSightings();
     Sighting[] expected = { testSighting };
