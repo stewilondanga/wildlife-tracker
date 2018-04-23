@@ -1,4 +1,5 @@
-##WILDLIFE TRACKER
+**WILDLIFE TRACKER
+
 An application to manage track wildlife
 
 DESCRIPTION
