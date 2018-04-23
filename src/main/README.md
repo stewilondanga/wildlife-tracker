@@ -1,8 +1,8 @@
-Wildlife Tracker
+**WILDLIFE TRACKER
 
 An application to manage track wildlife
 
-Description
+**DESCRIPTION
 
 This application is designed to the Forest Service. This application will allow the rangers of the Forest Service to track endangered and non-endangered animals for a wildlife study.
 
