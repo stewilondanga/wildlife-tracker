@@ -3,6 +3,10 @@ An application to manage and track wildlife
 
 By Stewart ilondanga
 
+stilondanga@gmail.com
+
+copyright 2018
+
 ## DESCRIPTION
 This application is designed for the Forest Service. This application will allow the rangers of the Forest Service to track 
 endangered and non-endangered animals for a wildlife study.
