@@ -1,6 +1,7 @@
 # WILDLIFE TRACKER
-By Stewart ilondanga
 An application to manage and track wildlife
+
+By Stewart ilondanga
 
 ## DESCRIPTION
 This application is designed for the Forest Service. This application will allow the rangers of the Forest Service to track 
