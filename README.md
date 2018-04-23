@@ -1,11 +1,11 @@
 ##### WILDLIFE TRACKER
 An application to manage track wildlife
 
-DESCRIPTION
+##### DESCRIPTION
 This application is designed to the Forest Service. This application will allow the rangers of the Forest Service to track 
 endangered and non-endangered animals for a wildlife study.
 
-SETUP/INSTALLATION REQUIREMENTS
+##### SETUP/INSTALLATION REQUIREMENTS
 Create the database and tables in PSQL:
 
 CREATE DATABASE wildlife_tracker; 
@@ -28,7 +28,7 @@ git clone https://github.com/stewilondanga/wildlife-tracker.git cd wildlife-trac
 
 gradle run Then open http://localhost:4567 in your preferred web browser.
 
-OBJECTIVES
+##### OBJECTIVES
 An interface or inherited class provides similar content in different classes. 
 Database timestamps are included for each sighting. 
 At least two Exceptions can be thrown and caught. 
@@ -46,7 +46,7 @@ Build files are discluded from Git using a .gitignore file.
 Code and Git documentation follows best practices (descriptive variables names, proper indentation and spacing, 
 separation between front and back-end logic, detailed commit messages in the correct tense, and a well-formatted README). 
 
-MINIMUM SPECIFICATION
+##### MINIMUM SPECIFICATION
 The program should be able to store and retrieve the names of each animal. 
 Example Input: squirrel 
 Example Output: squirrel 
@@ -75,7 +75,7 @@ The program should be able delete any of the above from the database.
 Example Input: Delete Mjanja 
 Example Output: [None] 
 
-TECHNOLOGIES USED
+##### TECHNOLOGIES USED
 Java 
 JUnit 
 Gradle 
