@@ -1,4 +1,5 @@
 # WILDLIFE TRACKER
+By Stewart ilondanga
 An application to manage and track wildlife
 
 ## DESCRIPTION
